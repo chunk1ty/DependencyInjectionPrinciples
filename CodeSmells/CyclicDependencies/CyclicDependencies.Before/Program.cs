@@ -34,7 +34,6 @@ namespace CyclicDependencies.Before
 
         public void DoSomething()
         {
-            _worker1.DoSomething1();
             Console.WriteLine("DoSomething");
         }
     }
@@ -46,9 +45,9 @@ namespace CyclicDependencies.Before
 
     public class Worker1 : IWorker1
     {
-        private readonly Worker _worker;
+        private IWorker _worker;
 
-        public Worker1(Worker worker)
+        public Worker1(IWorker worker)
         {
             _worker = worker;
         }
@@ -56,7 +55,7 @@ namespace CyclicDependencies.Before
         public void DoSomething1()
         {
             _worker.DoSomething();
-            Console.WriteLine("DoSomething");
-        } 
+            Console.WriteLine("DoSomething1");
+        }
     }
 }
