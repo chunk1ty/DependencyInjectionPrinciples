@@ -7,7 +7,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeSmells", "CodeSmells", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CyclicDependencies", "CyclicDependencies", "{5A1564C7-7414-49B9-9DEE-A4FC6186854D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyclicDependencies.Before", "CodeSmells\CyclicDependencies\CyclicDependencies.Before\CyclicDependencies.Before.csproj", "{59F1C9FB-1566-4A48-85AE-1A77CC6BAB77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CyclicDependencies.Before", "CodeSmells\CyclicDependencies\CyclicDependencies.Before\CyclicDependencies.Before.csproj", "{59F1C9FB-1566-4A48-85AE-1A77CC6BAB77}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ShortLivedDependencies", "ShortLivedDependencies", "{30EE71B7-A678-46B9-B6A9-F3E63918B7F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortLivedDependencies.Before", "CodeSmells\ShortLivedDependencies\ShortLivedDependencies.Before\ShortLivedDependencies.Before.csproj", "{BC2A1158-3B0B-4427-8820-5F00DC3E1C2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortLivedDependencies.After", "CodeSmells\ShortLivedDependencies\ShortLivedDependencies.After\ShortLivedDependencies.After.csproj", "{99A72A24-A5BA-44EA-A173-7E70FD793766}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,6 +25,14 @@ Global
 		{59F1C9FB-1566-4A48-85AE-1A77CC6BAB77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59F1C9FB-1566-4A48-85AE-1A77CC6BAB77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59F1C9FB-1566-4A48-85AE-1A77CC6BAB77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC2A1158-3B0B-4427-8820-5F00DC3E1C2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC2A1158-3B0B-4427-8820-5F00DC3E1C2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC2A1158-3B0B-4427-8820-5F00DC3E1C2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC2A1158-3B0B-4427-8820-5F00DC3E1C2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99A72A24-A5BA-44EA-A173-7E70FD793766}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99A72A24-A5BA-44EA-A173-7E70FD793766}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99A72A24-A5BA-44EA-A173-7E70FD793766}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99A72A24-A5BA-44EA-A173-7E70FD793766}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -26,6 +40,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{5A1564C7-7414-49B9-9DEE-A4FC6186854D} = {F6CCF1D0-EB65-4506-AE73-1026CB2B781F}
 		{59F1C9FB-1566-4A48-85AE-1A77CC6BAB77} = {5A1564C7-7414-49B9-9DEE-A4FC6186854D}
+		{30EE71B7-A678-46B9-B6A9-F3E63918B7F0} = {F6CCF1D0-EB65-4506-AE73-1026CB2B781F}
+		{BC2A1158-3B0B-4427-8820-5F00DC3E1C2B} = {30EE71B7-A678-46B9-B6A9-F3E63918B7F0}
+		{99A72A24-A5BA-44EA-A173-7E70FD793766} = {30EE71B7-A678-46B9-B6A9-F3E63918B7F0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C23C1468-C626-45E4-A31D-7D2398DAE853}
