@@ -1,7 +1,6 @@
 ﻿using Autofac;
 using CyclicDependencies.After.PropertyInjection;
 
-
 namespace CyclicDependencies.After
 {
     public class Program
