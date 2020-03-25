@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Transactions;
+using AOP.Domain._3.FixOCPusingParameterObject;
 
 namespace AOP.Domain._4.FixLSPintroducedInStep3WithGenericAbstraction
 {
@@ -13,5 +13,54 @@ namespace AOP.Domain._4.FixLSPintroducedInStep3WithGenericAbstraction
     public interface ICommandService<TCommand>
     {
         void Execute(TCommand command);
+    }
+
+    public class TransactionCommandServiceDecorator<TCommand> : ICommandService<TCommand>
+    {
+        private readonly ICommandService<TCommand> decoratee;
+
+        public void Execute(TCommand command)
+        {
+            using (var scope = new TransactionScope())
+            {
+                this.decoratee.Execute(command);
+                scope.Complete();
+            }
+        }
+    }
+
+    public class SomeController
+    {
+        private readonly ICommandService<AdjustInventory> _adjustInventoryService;
+
+        public SomeController(ICommandService<AdjustInventory> adjustInventoryService)
+        {
+            _adjustInventoryService = adjustInventoryService;
+        }
+
+        public void Index()
+        {
+            var adjustInventory = new AdjustInventory
+            {
+                Decrease = true,
+                ProductId = Guid.NewGuid(),
+                Quantity = 7
+            };
+
+            _adjustInventoryService.Execute(adjustInventory);
+        }
+    }
+
+    public class AdjustInventoryService : ICommandService<AdjustInventory>
+    {
+        public void Execute(AdjustInventory command)
+        {
+            // call Db
+        }
+    }
+
+    public interface IQueryService<TResult, TQuery>
+    {
+        TResult Execute(TQuery query);
     }
 }
